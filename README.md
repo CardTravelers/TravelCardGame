@@ -1,5 +1,6 @@
 # TravelCardGame
 
+![Domain Model](img/FigJam Basics.jpg)
 
 Names:
 
