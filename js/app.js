@@ -4,17 +4,21 @@ let randomLocations = [];
 let numLocations = 50;  // change to location list.length
 let randomAnswers = [];
 
+
 // **********DOM WINDOWS***********
 
 let cardImage = document.getElementById('cardImage');// IMG element
 let cardHint1 = document.getElementById('cardHint1');// P element
 let cardHint2 = document.getElementById('cardHint2');// P element
 let cardAnswer = document.getElementById('cardAnswer');// form with list of 4 options to include a submit button
-let answer1 = document.getElementById('answer1');
-let answer2 = document.getElementById('answer2');
-let answer3 = document.getElementById('answer3');
-let answer4 = document.getElementById('answer4');
+let answer1 = document.getElementById('answer1Label');
+let answer2 = document.getElementById('answer2Label');
+let answer3 = document.getElementById('answer3Label');
+let answer4 = document.getElementById('answer4Label');
+const card = document.querySelector('.card__inner');
+let timer = document.getElementById('timer');
 
+let answerArray = [];
 
 let matterhorn = new Locations(
   'matterhorn', 'It is the tenth highest mountain in Switzerland, and one of 48 Swiss peaks above 4000 m in height.', 'This location first appeared on Toblerone chocolate bars in 1960.', 'Nagano, Japan', 'Interlaken, Switzerland', 'Vail, CO', 'img/matterhorn.jpg');
@@ -35,33 +39,6 @@ function Locations(name, hint1, hint2, option2, option3, option4, imgPath) {
 }
 
 
-// Randomly shuffle all locations
-// Return array of index numbers
-function randomCard() {
-  for (let i = 0; i < numLocations; i++) {
-
-    let tempNum = Math.floor(Math.random() * (numLocations));
-    while (randomLocations.includes(tempNum)) {
-      tempNum = Math.floor(Math.random() * (numLocations));
-    }
-    randomLocations[i] = tempNum;
-  }
-}
-
-function randomAnswer() {
-  for (let i = 0; i < 4; i++) {
-
-    let tempNum = Math.floor(Math.random() * (4));
-    while (randomAnswers.includes(tempNum)) {
-      tempNum = Math.floor(Math.random() * (4));
-    }
-    randomAnswers[i] = tempNum;
-  }
-}
-
-
-
-
 // **********HELPER FUNCTION/UTILITIES**********
 // // Show main image
 // // Show 2 hints, blurred
@@ -71,43 +48,40 @@ function renderCard(cardIndex) {
   cardImage.src = locationList[cardIndex].imgPath;
   cardHint1.textContent = locationList[cardIndex].hint1;
   cardHint2.textContent = locationList[cardIndex].hint2;
-  let answerArray = [answer1, answer2, answer3, answer4];
-  for (let i = 0; i < 4; i++) {
-    if (randomAnswers[i] === 0) {
-      answerArray[i].value = '\"' + locationList[cardIndex].name + '\"';
-    } else if (randomAnswers[i] === 1) {
-      answerArray[i].value = '\"' + locationList[cardIndex].option2 + '\"';
-    } else if (randomAnswers[i] === 2) {
-      answerArray[i].value = '\"' + locationList[cardIndex].option3 + '\"';
-    } else if (randomAnswers[i] === 3) {
-      answerArray[i].value = '\"' + locationList[cardIndex].option4 + '\"';
-    }
-    console.log(answerArray[i].value);
-  }
+
+  answerArray[0] = locationList[cardIndex].name;
+  answerArray[1] = locationList[cardIndex].option2;
+  answerArray[2] = locationList[cardIndex].option3;
+  answerArray[3] = locationList[cardIndex].option4;
+  answerArray = shuffleArray(answerArray);
+
+  answer1.textContent = answerArray[0];
+  answer2.textContent = answerArray[1];
+  answer3.textContent = answerArray[2];
+  answer4.textContent = answerArray[3];
 }
 
 
 // **********EVENT LISTENERS***************
 // // event listener for card
-// function handleClick(event) {
-//   // if click on hint 1, run another function
-//   hintOneClick();
+function handleClick(event) {
+  //   // if click on hint 1, run another function
+  //   hintOneClick();
 
-//   // if click on hint 2, run this function
-//   hintTwoClick();
+  //   // if click on hint 2, run this function
+  //   hintTwoClick();
 
-//   // if click on submit button, run this function
-//   scoreAnswer();
+  //   // if click on submit button, run this function
+  //   scoreAnswer();
 
-// }
+}
 
 
-let gameCard = document.getElementById('gameCard');
-gameCard.addEventListener('click', handleClick);
+card.addEventListener('click', handleClick);
 
 // on click, unblur hint 1
 // decrement total possible score
-function hintOneClick(){
+function hintOneClick() {
 
   hint1.style.removeProperty('filter');
 }
@@ -133,28 +107,69 @@ function hintOneClick(){
 // // timer function.  Count down from 5 minutes (variable) until game end
 // // When timer ends, end game, tally score
 // window.onload = (e) => {gameTimer();};
-let gameTime = document.getElementById('gameTime');
+
 let time = 300;
 
 displayTime(time);
 
 function gameTimer() {
-  let countdown = setInterval (()=>{
+  let countdown = setInterval(() => {
     time--;
     displayTime(time);
-    if(time <= 0 || time < 1){
-      gameTime.innerHTML = 'Game over';
+    if (time <= 0 || time < 1) {
+      timer.innerHTML = 'Game over';
       clearInterval(countdown);
     }
 
-  } , 1000);
+  }, 1000);
+}
+
+// card.addEventListener("click", function (e) {
+//   card.classList.toggle('is-flipped');
+// });
+
+// // timer //
+// let startingMinutes = 5;
+// let start = startingMinutes * 60;
+
+// //get dom//
+// 
+
+// setInterval(updateCountdown, 1000);
+
+// //function//
+// function updateCountdown() {
+//   let minutes = Math.floor(start / 60);
+//   let seconds = start % 60;
+
+//   seconds = seconds< 5 ? '0' + seconds : seconds;
+// //enter back in dom//
+//   timer.innerHTML = `${minutes}:${seconds}`;
+//   start--;
+// }
+
+
+function shuffleArray(array) {
+  let tempNum;
+  let tempArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    console.log('start of loop ' + i);
+    tempNum = Math.floor(Math.random() * (array.length));
+    while (tempArray.includes(array[tempNum])) {
+      tempNum = Math.floor(Math.random() * (array.length));
+    }
+    tempArray[i] = array[tempNum];
+    console.log(tempArray);
+  }
+  return tempArray;
 }
 
 
-function displayTime(seconds){
+function displayTime(seconds) {
   let min = Math.floor(seconds / 60);
   let sec = Math.floor(seconds % 60);
-  gameTime.innerHTML= `${min<10 ? '0': ''}${min}:${sec<10 ? '0': ''}${sec}`;
+  timer.innerHTML = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 gameTimer();
 // // high score table.  See if user score is in top 10.  If yes, add to table
@@ -164,6 +179,5 @@ gameTimer();
 
 // }
 // *********** EXECUTABLE CODE**********
-randomCard();
+locationList = shuffleArray(locationList);
 renderCard(0);
-randomAnswer();
