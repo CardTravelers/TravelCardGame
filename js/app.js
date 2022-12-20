@@ -44,11 +44,14 @@ function handleClick (event) {
 
 }
 
+let gameCard = document.getElementById('gameCard');
+gameCard.addEventListener('click', handleClick);
 
 // on click, unblur hint 1
 // decrement total possible score
 function hintOneClick(){
-
+  element = document.styleSheets[0].cssRules[0].style;
+  element.removeProperty('filter');
 }
 
 
@@ -71,7 +74,6 @@ function scoreAnswer(){
 // timer function.  Count down from 5 minutes (variable) until game end
 // When timer ends, end game, tally score
 function gameTimer(){
-
 
 
 }
