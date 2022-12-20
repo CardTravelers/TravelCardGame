@@ -2,40 +2,55 @@
 <html lang="en">tre
 
 <head>
-  <title>Travel Countdown!</title>
+  <title color: >Travel Countdown!</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <a href="aboutus.html">About Us</a> 
 </head>
 
 <body>
   <header>
-    Game Insutructions:
+    Travel Countdown Game
   </header>
   <main>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quis, minus nesciunt eos repellat incidunt? Amet repellat molestiae deserunt sed distinctio incidunt deleniti id earum sit, aut nostrum quod cumque!
-      Quo ullam officiis ducimus nesciunt tempora eum iusto accusantium ab? Quae deserunt impedit est ipsam nesciunt magni repudiandae veniam at nostrum? Quisquam autem voluptates, ut quibusdam blanditiis aliquam voluptatibus officia.
-      Libero odio expedita accusamus illum tempore id voluptatibus eum praesentium accusantium enim soluta reiciendis possimus maxime provident et placeat sequi, laboriosam adipisci cumque magni qui saepe repudiandae eligendi pariatur. Dolore.
-      Distinctio ipsa rem quis molestias adipisci. Esse provident pariatur magni neque accusamus nulla minima omnis, eius at, eos praesentium consequuntur debitis beatae est maxime a expedita facere qui aliquam blanditiis?
+    <div style="color: #ffffff">
+      Welcome to the Travel Game. Here you will have 5 minutes to answer as many questions as you can about our travel cards. Each travel card has 2 hints that you can click on to help you with the question. Becareful though if you use a hint you lose 100 points. However if you can guess without a hint you can earn 300 points. There are 20 total cards. Good Luck...
     </div>
     <article>
       <fieldset>
-        <form id="Username">
-       <legend> Create Username</legend>
+        <h1 style="color:#cc0000"> Create Username</h1>
+      <form id="Username">
+      
        <label for="Username"></label>
        <input name="Username" type="text" id="username" required>
+       
        </form>
       </fieldset>
     </article>
-    <button>
+    <button style="color:antiquewhite">
       Start here!
     </button>
+    <img id="cardImage"alt="">
+    <p id = "cardHint1"></p>
+    <p id = "cardHint2"></p>
+    <form id="cardAnswer">
+      <input type ="radio" id="answer1" name="cardAnswerOne" value="hello">
+      <label for="answer1"></label><br>
+      <input type ="radio" id="answer2" name="cardAnswerTwo" value="">
+      <label for="answer2"></label><br>
+      <input type ="radio" id="answer3" name="cardAnswerThree" value="">
+      <label for="answer3"></label><br>
+      <input type ="radio" id="answer4" name="cardAnswerFour" value="">
+      <label for="answer4"></label><br>
+    </form>
   </main>
   <footer>Copyright</footer>
   <script src="js/app.js"></script>
 </body>
-
+<!-- 
 =======
 <head>
   <meta charset="UTF-8">
@@ -44,7 +59,8 @@
   <title>Document</title>
 </head>
 <body>
+
   
-</body>
+</body> -->
 
 </html>
