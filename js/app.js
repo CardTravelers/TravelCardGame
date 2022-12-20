@@ -101,11 +101,18 @@ function renderCard(cardIndex) {
 // }
 
 
-// // on click, unblur hint 1
-// // decrement total possible score
-// function hintOneClick() {
+let gameCard = document.getElementById('gameCard');
+gameCard.addEventListener('click', handleClick);
 
-// }
+// on click, unblur hint 1
+// decrement total possible score
+
+
+function hintOneClick(){
+  element = document.styleSheets[0].cssRules[0].style;
+  element.removeProperty('filter');
+}
+
 
 
 // // on click, unblur hint 2
@@ -130,7 +137,7 @@ function renderCard(cardIndex) {
 
 
 
-// }
+}
 
 // // high score table.  See if user score is in top 10.  If yes, add to table
 
