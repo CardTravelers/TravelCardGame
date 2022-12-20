@@ -3,8 +3,11 @@
  }
 
  a {
+  display: inline-block;
+  position: relative;
   font-size: 3rem;
   font-family: 'VT323', monospace;
+  z-index: 1;
  }
 
  .aboutush1 {
@@ -90,7 +93,7 @@
  }
 
 
- button {
+.starthere {
    padding: 25px;
    margin: auto;
    font-family: 'VT323', monospace;
@@ -98,7 +101,7 @@
    font-size: 3rem;
    line-height: 20px;
    margin-bottom: 5px;
-   background-color: rgb(104, 17, 88);
+   background-color: rgb(16, 117, 31);
  }
 
 
@@ -127,4 +130,6 @@
   border-radius: 150px;
   width: 400px;
  }
+ 
+
  

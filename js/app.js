@@ -5,6 +5,7 @@ let numLocations = 50;  // change to location list.length
 let randomAnswers = [];
 
 // **********DOM WINDOWS***********
+
 let cardImage = document.getElementById('cardImage');// IMG element
 let cardHint1 = document.getElementById('cardHint1');// P element
 let cardHint2 = document.getElementById('cardHint2');// P element

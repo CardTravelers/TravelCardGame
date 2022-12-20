@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Card</title>
+	<link rel="stylesheet" href="/css/gamestyle.css" />
+</head>
+<body>
+  <header style="color: #ffffff"> Time is ticking away $username</header>
+    <div id="timer" class="timer" style="color: #ffffff">
+      00:00
+    </div>
+  <div>
+	<div class="card">
+		<div class="card__inner">
+			<div class="card__face card__face--front">
+				<h2>Correct Answer</h2>
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<img src="img/hawaii.jpg" alt="" class="pp" />
+						<h2 class="hint">[Hint]</h2>
+					</div>
+					<div class="card__body">
+						<h3>Choose An Answer Below</h3>
+            <form id="cardAnswer">
+              <input type ="radio" id="answer1" name="cardAnswerOne" value="hello">
+              <label for="answer1"></label><br>
+              <input type ="radio" id="answer2" name="cardAnswerTwo" value="">
+              <label for="answer2"></label><br>
+              <input type ="radio" id="answer3" name="cardAnswerThree" value="">
+              <label for="answer3"></label><br>
+              <input type ="radio" id="answer4" name="cardAnswerFour" value="">
+              <label for="answer4"></label><br>
+            </form>
+            <button>Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/javascript.js"></script>
+</body>
+</html>
