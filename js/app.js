@@ -107,11 +107,9 @@ gameCard.addEventListener('click', handleClick);
 
 // on click, unblur hint 1
 // decrement total possible score
-
-
 function hintOneClick(){
-  element = document.styleSheets[0].cssRules[0].style;
-  element.removeProperty('filter');
+
+  hint1.style.removeProperty('filter');
 }
 
 
@@ -134,12 +132,31 @@ function hintOneClick(){
 
 // // timer function.  Count down from 5 minutes (variable) until game end
 // // When timer ends, end game, tally score
-// function gameTimer() {
+// window.onload = (e) => {gameTimer();};
+let gameTime = document.getElementById('gameTime');
+let time = 300;
 
+displayTime(time);
 
+function gameTimer() {
+  let countdown = setInterval (()=>{
+    time--;
+    displayTime(time);
+    if(time <= 0 || time < 1){
+      gameTime.innerHTML = 'Game over';
+      clearInterval(countdown);
+    }
 
+  } , 1000);
 }
 
+
+function displayTime(seconds){
+  let min = Math.floor(seconds / 60);
+  let sec = Math.floor(seconds % 60);
+  gameTime.innerHTML= `${min<10 ? '0': ''}${min}:${sec<10 ? '0': ''}${sec}`;
+}
+gameTimer();
 // // high score table.  See if user score is in top 10.  If yes, add to table
 
 // function highScore() {
