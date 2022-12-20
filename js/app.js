@@ -49,6 +49,8 @@ gameCard.addEventListener('click', handleClick);
 
 // on click, unblur hint 1
 // decrement total possible score
+
+
 function hintOneClick(){
   element = document.styleSheets[0].cssRules[0].style;
   element.removeProperty('filter');
