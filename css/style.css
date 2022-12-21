@@ -270,3 +270,7 @@ main div {
 .leaderboard {
   font-family: 'VT323', monospace;
 }
+
+audio{
+  display:none;
+}
