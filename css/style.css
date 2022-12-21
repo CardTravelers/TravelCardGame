@@ -6,6 +6,7 @@ html {
 a {
   display: inline-block;
   position: relative;
+  margin-left: 50px;
   font-size: 3rem;
   font-family: 'VT323', monospace;
   z-index: 1;
@@ -229,7 +230,7 @@ form input {
 
 img {
   border-radius: 150px;
-  width: 400px;
+  width: 600px;
 }
 
 .leaderboard {
@@ -254,4 +255,18 @@ button {
   align-items: center;
   padding: 100px; 
 
+}
+
+form {
+  position: relative;
+  z-index: 2;
+}
+
+main div {
+  background-image: url(/img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
+  font-family: 'Raleway', sans-serif;
+}
+
+.leaderboard {
+  font-family: 'VT323', monospace;
 }
