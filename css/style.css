@@ -120,6 +120,11 @@ form input {
   }
 }
 
+
+audio{
+  display:none;
+}
+
 /* 
 About Us CSS 
 Cleland 21 Dec

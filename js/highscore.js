@@ -29,7 +29,6 @@ function getTable() {
     ];
     storeTable();
   }
-
   // Get table from localStorage, then parse into array
   let tempArray = [];
   let tempString = localStorage.getItem('highScoreTable');
@@ -40,6 +39,11 @@ function getTable() {
     tempArray[i][1] = Number(tempArray[i][1]);
   }
   return tempArray;
+  // let scoreItems = document.getElementById('highScoreTable').children;
+  // for (let i = 0; i < colors.length; i++) {
+  //   scoreItems[i].style.color = colors[i];
+  //   let colors = ['#6600CC', '#009933', '#0066FF', '#FFFF00'];
+  // };
 }
 
 function storeTable() {
@@ -56,7 +60,7 @@ function clearTable() { // eslint-disable-line
 
 function renderTable(table, data) {
   // Sort table from high score to low score
-  data.sort(function(a, b) {
+  data.sort(function (a, b) {
     let x = a[1];
     let y = b[1];
     return y - x;
