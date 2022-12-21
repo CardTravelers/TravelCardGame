@@ -1,135 +1,257 @@
- html {
-   background-image: url(../img/background.jpg);
- }
+html {
+  background-image: url(../img/background.jpg);
+  color: #fff
+}
 
- a {
+a {
   display: inline-block;
   position: relative;
   font-size: 3rem;
   font-family: 'VT323', monospace;
   z-index: 1;
- }
+}
 
- .aboutush1 {
+.aboutush1 {
   font-size: 6rem;
-  
- }
 
- nav {
-  padding: 0px;
- }
-
- .aboutusheader {
-  padding: 0px;
-
- }
-
-
- body {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   min-height: 100vh;
- }
-
-
- header {
-   text-align: center;
-   font-family: 'VT323', monospace;
-   font-size: 7rem;
-   -webkit-text-stroke: 0.3vw rgb(19, 95, 48);
-   text-transform: uppercase;
- }
-
-
- header::before
-{
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    color: blue;
-    -webkit-text-stroke: 0vw rgb(16, 117, 31);
-    border-right: 2px solid rgb(124, 30, 38);
-    overflow: hidden;
-    animation: animate 6s linear infinite;
 }
 
-@keyframes animate
-{
-  0%,10%,100%
-    {
-      width: 0;
-    }
-    70%,90%
-    {
-      width: 100%;
-    }
+nav {
+  padding: 0px;
 }
 
- main {
-   margin-bottom: 200px;
-   font-size: 2rem;
-   text-align: center;
-   font-family: 'VT323', monospace;
-   ;
-   padding-top: 100px;
- }
+.aboutusheader {
+  padding: 0px;
 
- article {
-   padding: 50px;
- }
-
- label{
-  float: left;
- }
+}
 
 
- form input {
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header{
   text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 7rem;
+  -webkit-text-stroke: 0.3vw rgb(19, 95, 48);
+  text-transform: uppercase;
+}
+
+
+header::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: blue;
+  -webkit-text-stroke: 0vw rgb(16, 117, 31);
+  border-right: 2px solid rgb(124, 30, 38);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+
+@keyframes animate {
+
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+main {
+  margin-bottom: 200px;
   font-size: 2rem;
- }
+  text-align: center;
+  font-family: 'VT323', monospace;
+  padding-top: 100px;
+}
+
+article {
+  padding: 50px;
+}
+
+label {
+  float: left;
+}
+
+
+form input {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  width: 340px;
+}
 
 
 .starthere {
-   padding: 25px;
-   margin: auto;
-   font-family: 'VT323', monospace;
-   display: flex;
-   font-size: 3rem;
-   line-height: 20px;
-   margin-bottom: 5px;
-   background-color: rgb(16, 117, 31);
- }
-
-
- // about us page 
-
- .aboutush1 {
+  padding: 25px;
+  margin: auto;
+  font-family: 'VT323', monospace;
   font-size: 3rem;
- }
+  line-height: 20px;
+  background-color: rgb(16, 117, 31);
+}
 
- .aboutme {
+
+/* about us page  */
+
+.aboutush1 {
+  font-size: 3rem;
+}
+
+.aboutme {
   border: 5px solid purple;
 
- }
+}
 
- .aboutmemain {
+.aboutmemain {
   font-size: 2rem;
- }
+}
 
- @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   img {
     filter: brightness(.7) contrast(1.2);
   }
 }
 
- img {
+img {
   border-radius: 150px;
   width: 400px;
- }
- 
+} 
 
- 
+header {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 7rem;
+  -webkit-text-stroke: 0.3vw rgb(19, 95, 48);
+  text-transform: uppercase;
+}
+
+
+header::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: blue;
+  -webkit-text-stroke: 0vw rgb(16, 117, 31);
+  border-right: 2px solid rgb(124, 30, 38);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+
+@keyframes animate {
+
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+main {
+  margin-bottom: 200px;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'VT323', monospace;
+  padding-top: 100px;
+}
+
+article {
+  padding: 50px;
+}
+
+label {
+  float: left;
+}
+
+
+form input {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  width: 340px;
+}
+
+
+.starthere {
+  padding: 25px;
+  margin: auto;
+  font-family: 'VT323', monospace;
+  font-size: 3rem;
+  line-height: 20px;
+  background-color: rgb(16, 117, 31);
+}
+
+
+/* about us page  */
+
+.aboutush1 {
+  font-size: 3rem;
+}
+
+.aboutme {
+  border: 5px solid purple;
+
+}
+
+.aboutmemain {
+  font-size: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.7) contrast(1.2);
+  }
+}
+
+img {
+  border-radius: 150px;
+  width: 400px;
+}
+
+.leaderboard {
+  margin-top: -300px;
+} 
+
+button {
+  margin: 20px;
+  padding: 10px;
+  font-size: 2rem;
+  width: 300px;
+  color: rgb(79, 15, 80);
+  background-color: rgb(16, 117, 31);
+  border: solid rgb(86, 15, 88);
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; 
+
+}
