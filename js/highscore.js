@@ -1,56 +1,103 @@
 'use strict';
-
-///score array, we still need to push the user score object into this array
+// *********GLOBALS**********
 let scores = [
-  { name: "Player1", score: "430", id: "player1" },
-  { name: "Player2", score: "580", id: "player2" },
-  { name: "Player3", score: "310", id: "player3" },
-  { name: "Player4", score: "640", id: "player4" },
-  { name: "Player5", score: "495", id: "player5" },
-  { name: "Player6", score: "495", id: "player6" },
-  { name: "Player7", score: "495", id: "player7" },
-  { name: "Player8", score: "495", id: "player8" },
-  { name: "Player9", score: "495", id: "player9" },
-  { name: "Player10", score: "495", id: "player10" },
+  ['Player1', 430],
+  ['Player2', 530],
+  ['Player3', 630]
 ];
-function updateLeaderboardView() {
-  let leaderboard = document.getElementById("leaderboard");
-  leaderboard.innerHTML = "";
-  scores.sort(function (a, b) { return b.score - a.score });
-  let elements = []; // we'll need created elements to update colors later on
-  // create elements for each player
-  for (let i = 0; i < scores.length; i++) {
-    let name = document.createElement("div");
-    let score = document.createElement("div");
-    name.classList.add("name");
-    score.classList.add("score");
-    name.innerText = scores[i].name;
-    score.innerText = scores[i].score;
-    let scoreRow = document.createElement("div");
-    scoreRow.classList.add("row");
-    scoreRow.appendChild(name);
-    scoreRow.appendChild(score);
-    leaderboard.appendChild(scoreRow);
-    elements.push(scoreRow);
+
+// **********HELPER FUNCTION/UTILITIES**********
+function newPlayer() {
+  // check to see if username exists, then save to table
+  if (localStorage.getItem('userName') !== null) {
+    scores.push([localStorage.getItem('userName'), localStorage.getItem('score')]);
+    storeTable();
   }
-  let colors = ["purple", "green", "blue"];
-  for (let i = 0; i < 3; i++) {
-    elements[i].style.color = colors[i];
+
+  // delete username and score to prep for next round
+  localStorage.removeItem('userName');
+  localStorage.removeItem('score');
+}
+
+function getTable() {
+  // if highScoreTable doesn't exist, create a temp one
+  if (localStorage.getItem('highScoreTable') === null) {
+    scores = [
+      ['Player1', 430],
+      ['Player2', 530],
+      ['Player3', 630]
+    ];
+    storeTable();
+  }
+
+  // Get table from localStorage, then parse into array
+  let tempArray = [];
+  let tempString = localStorage.getItem('highScoreTable');
+  tempArray = JSON.parse(tempString);
+
+  // Convert score from string to number
+  for (let i = 0; i < tempArray.length; i++) {
+    tempArray[i][1] = Number(tempArray[i][1]);
+  }
+  return tempArray;
+}
+
+function storeTable() {
+  // Convert scores to string, then save to localStorage
+  let tempString = JSON.stringify(scores);
+  localStorage.setItem('highScoreTable', tempString);
+}
+
+function clearTable() { // eslint-disable-line
+  // Helper function used for testing
+  localStorage.clear();
+  scores = getTable();
+}
+
+function renderTable(table, data) {
+  // Sort table from high score to low score
+  data.sort(function(a, b) {
+    let x = a[1];
+    let y = b[1];
+    return y - x;
+  });
+
+  let tableDOM = document.getElementById(table);
+  tableDOM.innerHTML = ''; // clears table
+  let numColumns = data[0].length;
+  let numRows = data.length;
+  let rowElem;
+  let headerElem;
+  let cellElem;
+
+  // Create header row
+  rowElem = document.createElement('tr');
+  tableDOM.appendChild(rowElem);
+
+  // Create header cells
+  headerElem = document.createElement('th');
+  headerElem.textContent = 'Player Name';
+  rowElem.appendChild(headerElem);
+
+  headerElem = document.createElement('th');
+  headerElem.textContent = 'Score';
+  rowElem.appendChild(headerElem);
+
+  // Create data rows
+  // i = row, j = column
+  for (let i = 0; i < numRows; i++) {
+    rowElem = document.createElement('tr');
+    tableDOM.appendChild(rowElem);
+    // create data cells
+    for (let j = 0; j < numColumns; j++) {
+      cellElem = document.createElement('td');
+      cellElem.textContent = data[i][j];
+      rowElem.appendChild(cellElem);
+    }
   }
 }
-updateLeaderboardView();
-function randomize() {
-  for (var i = 0; i < scores.length; i++) { /// place math for score here
-    scores[i].score = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
-  }
-}
-// when your data changes, call updateLeaderboardView
-updateLeaderboardView();
-function Player() {
-  this.name = localStorage.getItem('userName'),
-    this.score = localStorage.getItem('score'),
-    this.id = 'playerx'
-};
-console.log(scores);
-scores.pop(new Player);
-console.log(scores);
+
+// *********** EXECUTABLE CODE**********
+scores = getTable();
+newPlayer();
+renderTable('highScoreTable', scores);
