@@ -4,7 +4,7 @@ let totalScore = 0;
 let cardScore;
 let currentCard = 0;
 let answerArray = [];
-let time = 30;
+let time = 300;
 
 // **********DOM WINDOWS***********
 let cardImage = document.getElementById('cardImage');// IMG element
@@ -25,7 +25,7 @@ let matterhorn = new Locations(
 let lasVegas = new Locations(
   'Las Vegas, Nevada', 'Over 22,000 concentions are held every year here.', 'This location is home to more than half of the 10 largest hotels in the world.', 'Reno, Nevada', 'Atlantic City, New Jersey', 'Macau, China', 'img/lasVegas.jpg');
 let buenosAires = new Locations(
-  'Buenos Aires, Argentina', 'This location has the largest port in it/s entire continent', 'This location was first founded by a expedition led by the Spainard Pedro de Mendoza', 'Sao Paulo, Brazil', 'Bogata, Columbia', 'Caracas, Venezuela', 'img/buenosAires.jpg');
+  'Buenos Aires, Argentina', 'This location has the largest port in it\'s entire continent', 'This location was first founded by a expedition led by the Spainard Pedro de Mendoza', 'Sao Paulo, Brazil', 'Bogata, Columbia', 'Caracas, Venezuela', 'img/buenosAires.jpg');
 let cinqueTerre = new Locations(
   'Cinque Terre, Italy', 'This location does not allow cars.', 'This location is a group of villages.,', 'Nice, France', 'Lisbon, Portugal', 'Barcelona, Spain', 'img/cinqueTerre.jpg');
 let budapest = new Locations(
@@ -35,15 +35,15 @@ let beijing = new Locations(
 let ibiza = new Locations(
   'Ibizia, Spain', 'This location has 57 different beaches', 'The ground is orange due to pine trees that grow across the island', 'Mykonos, Greece', 'Patong, Thailand', 'Cancun, Mexico', 'img/ibiza.jpg');
 let hawaii = new Locations(
-  'Hawaii', 'This location has the world/s most active volcano.', 'This location has the world/s tallest mountain, as measured from its base at the ocean floor.', 'Fiji', 'Tonga', 'New Zealand', 'img/hawaii.jpg');
+  'Hawaii', 'This location has the world\'s most active volcano.', 'This location has the world\'s tallest mountain, as measured from its base at the ocean floor.', 'Fiji', 'Tonga', 'New Zealand', 'img/hawaii.jpg');
 let hanoi = new Locations(
-  'Hanoi, Vietnam', 'This location/s name means City of Lakes.', 'This location has the world/s largest cave.', 'Shanghai, China', 'Taipei, Taiwan', 'Pyongyang, North Korea', 'img/hanoi.jpg');
+  'Hanoi, Vietnam', 'This location\'s name means City of Lakes.', 'This location has the world\'s largest cave.', 'Shanghai, China', 'Taipei, Taiwan', 'Pyongyang, North Korea', 'img/hanoi.jpg');
 let lisbon = new Locations(
   'Lisbon, Portugal', 'This location is the birthplace of the music genre fado', 'It is the oldest city in Western Europe', 'Amsterdam, Netherlands', 'Zurich, Switzerland', 'London, UK', 'img/lisbon.jpg');
 let virunga = new Locations(
   'Virunga National Park, Democratic Republic of Congo', 'This park has the highest deaths of rangers as they are often killed by poachers', 'This location is home to 218 mammal species, 706 bird species, 109 reptile species, 78 amphibian species, and 22 primate species', 'Yellowstone, WY', 'Banff National Park, Alberta', 'Serengeti National Park, East Africa', 'img/virunga.jpg');
 let machuPicchu = new Locations(
-  'Machu Picchu, Peru', 'The name means "Old Peak" or "Old Mountain"', 'This location is made up of 150 buildings ranging from baths and houses to temples and sancutaries', 'Chichen Itza, Mexico', 'Isla del Sol, Bolivia', 'Tikal, Guatemala', 'img/eli.jpeg');
+  'Machu Picchu, Peru', 'The name means "Old Peak" or "Old Mountain"', 'This location is made up of 150 buildings ranging from baths and houses to temples and sancutaries', 'Chichen Itza, Mexico', 'Isla del Sol, Bolivia', 'Tikal, Guatemala', 'img/machuPicchu.jpg');
 let providencia = new Locations(
   'Providencia, Columbia', 'Island that is part of a country Columbia, but geographic nearer to Nicaragua', 'It takes 30-40 minutes to drive in a loop around the island in a golf buggy', 'Cayo Acuario, Columbia', 'Johnny Cay, Columbia', 'Isle Grande, Columbia', 'img/providencia.jpg');
 
