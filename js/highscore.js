@@ -1,13 +1,12 @@
 'use strict';
-
-// *************** Global Variables **************
+// *********GLOBALS**********
 let scores = [
   ['Player1', 430],
   ['Player2', 530],
   ['Player3', 630]
 ];
 
-// *************** Functions **************
+// **********HELPER FUNCTION/UTILITIES**********
 function newPlayer() {
   // check to see if username exists, then save to table
   if (localStorage.getItem('userName') !== null) {
@@ -15,15 +14,9 @@ function newPlayer() {
     storeTable();
   }
 
-  // delete username and score
+  // delete username and score to prep for next round
   localStorage.removeItem('userName');
   localStorage.removeItem('score');
-}
-
-function storeTable() {
-  // Convert scores to string, then save to localStorage
-  let tempString = JSON.stringify(scores);
-  localStorage.setItem('highScoreTable', tempString);
 }
 
 function getTable() {
@@ -42,30 +35,27 @@ function getTable() {
   let tempString = localStorage.getItem('highScoreTable');
   tempArray = JSON.parse(tempString);
 
-
+  // Convert score from string to number
   for (let i = 0; i < tempArray.length; i++) {
     tempArray[i][1] = Number(tempArray[i][1]);
   }
   return tempArray;
 }
 
+function storeTable() {
+  // Convert scores to string, then save to localStorage
+  let tempString = JSON.stringify(scores);
+  localStorage.setItem('highScoreTable', tempString);
+}
+
 function clearTable() { // eslint-disable-line
-  // used for testing
+  // Helper function used for testing
   localStorage.clear();
   scores = getTable();
 }
 
-function createTable(table, data) {
-  // ***** Table generator
-  // requires table element with ID
-  // requires data in form of an array
-  // let tempArray = [
-  //   ['header 1', 'header 2', 'header 3'],
-  //   [1,2,3],
-  //   [4,5,6],
-  //   [7,8,9],
-  // ]
-
+function renderTable(table, data) {
+  // Sort table from high score to low score
   data.sort(function(a, b) {
     let x = a[1];
     let y = b[1];
@@ -85,7 +75,6 @@ function createTable(table, data) {
   tableDOM.appendChild(rowElem);
 
   // Create header cells
-
   headerElem = document.createElement('th');
   headerElem.textContent = 'Player Name';
   rowElem.appendChild(headerElem);
@@ -108,7 +97,7 @@ function createTable(table, data) {
   }
 }
 
-// *************** Executable Code **************
+// *********** EXECUTABLE CODE**********
 scores = getTable();
 newPlayer();
-createTable('highScoreTable', scores);
+renderTable('highScoreTable', scores);
