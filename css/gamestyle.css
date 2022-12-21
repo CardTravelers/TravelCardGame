@@ -55,16 +55,35 @@ body{
   box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
 }
 
-.card__face--front {
+/* .card__face--front {
   background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .card__face--front h2 {
   color: #FFF;
-  font-size: 32px;
+  font-size: 20px;
+  text-align: center;
+} */
+
+.card__face--front {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+.card__face--front h2 {
+  margin: 350px 10px 10px 10px;
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.card__face--front button {
+  margin: auto;
 }
 
 .card__face--back {
@@ -79,7 +98,10 @@ body{
 
 .card__header {
   position: relative;
+  font-size: 20px;
   padding: 30px 30px 40px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .card__header:after {
@@ -99,19 +121,20 @@ body{
   display: block;
   width: 200px;
   height: 200px;
-  margin: 0 auto 30px;
+  margin: 0 auto 10px;
   border-radius: 50%;
   background-color: #FFF;
-  border: 5px solid #FFF;
+  border: 3px solid #FFF;
   object-fit: cover;
 }
 
 .card__header h2 {
   color: #FFF;
-  font-size: 32px;
-  font-weight: 900;
+  font-size: 1em;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
+  padding: 5px;
 }
 
 .card__body {
@@ -119,15 +142,17 @@ body{
 }
 
 .card__body h3 {
-  color: var(--dark);
-  font-size: 24px;
-  font-weight: 600;
+  color: var(--light);
+  font-size: 1.4em;
+  font-weight: 500;
   margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .card__body p {
   color: var(--dark);
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.4;
 }
 
@@ -154,4 +179,30 @@ header {
   justify-content: center;
   margin-top: 20px;
   font-size: 3em;
+}
+
+fieldset {
+  font-size: 1.2em;
+  padding: 1.5vw;
+  margin: auto;
+  background-color: black;
+  color: #FFF;
+  line-height: 2rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nextCard {
+  padding: 10px;
+  margin-right: 20px;
+  display: block;
+}
+
+body header {
+  margin-top: 20px;
+  margin-left: 300px;
+  text-align: center;
+}
+
+.aboutmecard {
+  display: inline;
 }
