@@ -46,64 +46,30 @@ header nav {
   font-size: 3rem;
   letter-spacing: 3px;
   z-index: 1;
-
 }
 
 header nav a {
-  margin-left: 50px;
-}
-
-h1 {
-  margin-bottom: 10px;
-  color: rgb(16, 117, 31);
-}
-
-
-main {
-  margin-bottom: 200px;
-  font-size: 2rem;
-  text-align: center;
-  padding-top: 100px;
-}
-
-main section {
-  background-image: url(/img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 5px 5px 5px 5px rgb(2, 1, 1) inset;
-
-}
-
-article {
   padding: 50px;
 }
 
-fieldset {
-  margin: auto;
-  width: 300px;
-}
-
-form input {
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.5em;
-  width: 295px;
-  line-height: 20px;
-  border: none;
-  margin-bottom: 10px;
-  height: 50px;
-
-}
-
-.starthere {
-  height: 50px;
-  border: 3px solid rgb(79, 15, 80);
-  width: 300px;
+h2 {
   padding: 10px;
-  margin: auto;
-  font-family: 'VT323', monospace;
-  font-size: 3rem;
-  line-height: 20px;
-  background-color: rgb(16, 117, 31);
+  color: rgb(16, 117, 31);
+  font-size: 1.2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.7) contrast(1.2);
+  }
+}
+
+img {
+  border-radius: 75px;
+  width: 300px;
+  box-shadow: 0px 0px 109px -20px rgba(16, 117, 31, 0.888);
+  -webkit-box-shadow: 0px 0px 109px -20px rgba(16, 117, 31, 0.88);
+  -moz-box-shadow: 0px 0px 109px -20px rgba(16, 117, 31, 0.88);
 }
 
 @keyframes animate {
@@ -120,9 +86,19 @@ form input {
   }
 }
 
+main {
+  margin-bottom: 200px;
+  font-size: 2rem;
+  text-align: center;
 
-audio{
-  display:none;
+}
+
+article {
+  padding-top: 75px;
+}
+
+article p {
+  padding-top: 50px;
 }
 
 /* 

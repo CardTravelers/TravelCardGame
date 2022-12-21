@@ -8,31 +8,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <a href="aboutus.html">About Us</a>
+
 </head>
 
 <body>
   <header>
+    <nav>
+      <a href="aboutus.html">About Us</a>
+      <a href="Highscore.html">Highscore</a>
+    </nav>
     Travel Countdown Game
   </header>
   <main>
-    <div style="color: #ffffff">
-      Listen up closely, this is Marty speaking and I've been lost in time travel. I've only got 5 minutes until my portal closes. There are hints along the way. Each correct answer helps me get back closer to my time machine. Get atleast 10 right before the timer runs out. Good luck don't let me down.... 
-    </div>
+    <section>
+      <p>
+        Listen up closely, this is Marty speaking and I've been lost in time travel. I've only got 5 minutes until my
+        portal closes. There are hints along the way. Each correct answer helps me get back closer to my time machine.
+        Get
+        atleast 10 right before the timer runs out. Good luck don't let me down....
+      </p>
+      <article>
+        <h1>Create Username</h1>
+        <form id="userNameForm">
+          <fieldset>
+            <label for="userName"></label>
+            <input id="userName" type="text" name="text" placeholder="Enter Username" required>
+            <input class="starthere" type="submit" id="Send" value="Start Here">
+          </fieldset>
+        </form>
+      </article>
+    </section>
 
-    <article>
-      <h1 style="color:#cc0000"> Create Username</h1>
-      <form id="userNameForm">
-        <fieldset>
-          <label for="userName"></label>
-          <input id="userName" type="text" name="text" required>
-          <input type="submit" id="Send" value="Start Here">
-        </fieldset>
-      </form>
-    </article>
-    <a class="starthere" href="/Highscore.html">
-      Leaderboard
-    </a>
   </main>
   <footer>Copyright</footer>
   <script src="js/index.js"></script>
