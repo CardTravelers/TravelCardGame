@@ -18,5 +18,4 @@ function handleSubmit(event){
 // userNameForm.addEventListener('submit', handleSubmit);
 form.addEventListener('submit', handleSubmit);
 
-
 // *********** EXECUTABLE CODE**********
