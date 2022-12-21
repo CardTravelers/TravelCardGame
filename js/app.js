@@ -135,8 +135,12 @@ function handleSubmit(event) {
 
     nextCard.innerHTML = 'results';
   }
-  card.classList.toggle('is-flipped');
 
+  for(let i = 0; i < event.target.elements.cardOptions.length; i++){
+    event.target.elements.cardOptions[i].checked = false;
+  }
+
+  card.classList.toggle('is-flipped');
 }
 
 function hintOneClick() {
