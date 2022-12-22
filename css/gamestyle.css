@@ -172,6 +172,7 @@ header {
   margin-top: 20px;
   font-size: 2em;
   display: flex;
+  padding-right: 200px;
 }
 
 .timer {
@@ -201,8 +202,11 @@ body header {
   margin-top: 20px;
   margin-left: 300px;
   text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 3em;
 }
 
 .aboutmecard {
   display: inline;
 }
+

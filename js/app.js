@@ -139,7 +139,7 @@ function handleSubmit(event) {
   }
   if (currentCard === locationList.length - 1) {
 
-    nextCard.innerHTML = 'results';
+    nextCard.innerHTML = 'Results';
   }
 
   for(let i = 0; i < event.target.elements.cardOptions.length; i++){
@@ -184,7 +184,7 @@ function gameTimer() {
     if (time <= 0 || time < 1) {
       timerExpired = true;
       timer.innerHTML = 'Game over';
-      nextCard.innerHTML = 'results';
+      nextCard.innerHTML = 'Results';
       correctAnswer.innerHTML = ' Oh no! You couldn\'t guess all of my locations in time. I\'ll never find my way back now!';
       card.classList.toggle('is-flipped');
       clearInterval(countdown);
@@ -218,4 +218,4 @@ displayTime(time);
 gameTimer();
 renderCard(0);
 card.classList.toggle('is-flipped');
-header.innerHTML = `You have to...*burp* hurry up ${localStorage.getItem('userName')}. We don't have much time..`;
+header.innerHTML = `You have to...*BURP* hurry up ${localStorage.getItem('userName')}. We don't have much time..`;
