@@ -1,0 +1,160 @@
+/* 
+About Us CSS 
+Cleland 21 Dec
+Start
+ */
+
+html {
+  background-image: url(../img/background.jpg);
+  color: #fff;
+  font-family: 'VT323', monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 7rem;
+  -webkit-text-stroke: 0.3vw rgb(19, 95, 48);
+  text-transform: uppercase;
+}
+
+header::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: blue;
+  -webkit-text-stroke: 0vw rgb(16, 117, 31);
+  border-right: 2px solid rgb(124, 30, 38);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+header nav {
+  padding: 40px;
+  width: 600px;
+  margin: auto;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  z-index: 1;
+
+}
+
+header nav a {
+  margin-left: 50px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: rgb(16, 117, 31);
+  font-weight: 1000;
+}
+
+
+main {
+  margin-bottom: 200px;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 100px;
+}
+
+main section {
+  background-image: url(../img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
+  font-family: 'Raleway', sans-serif;
+  box-shadow: 5px 5px 5px 5px rgb(2, 1, 1) inset;
+
+}
+
+article {
+  padding: 50px;
+}
+
+fieldset {
+  margin: auto;
+  width: 300px;
+}
+
+form input {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  width: 295px;
+  line-height: 20px;
+  border: none;
+  margin-bottom: 10px;
+  height: 50px;
+
+}
+
+.starthere {
+  height: 50px;
+  border: 3px solid rgb(79, 15, 80);
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+  font-family: 'VT323', monospace;
+  font-size: 3rem;
+  line-height: 20px;
+  background-color: rgb(16, 117, 31);
+  cursor: pointer;
+}
+
+
+.scrollingLine {
+  position: absolute;
+  background-color: rgb(124, 30, 38);
+  width: 2px;
+  height: 100%;
+  animation: scrollingLine 3s infinite;
+}
+
+@keyframes scrollingLine {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 98%;
+  }
+}
+
+/* @keyframes animate {
+
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+} */
+
+
+audio{
+  display:none;
+}
+
+section p {
+  padding: 40px;
+  max-width: 80%;
+  margin:auto;
+  font-size: 1.2em;
+ }
+
+/* 
+About Us CSS 
+Cleland 21 Dec
+End
+ */
+
