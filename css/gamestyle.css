@@ -18,10 +18,11 @@ html {
 
 
 body{
-  font-family: 'VT323', monospace;
   width: 100%;
   min-height: 100vh;
 }
+
+
 
 .card {
   margin: 100px auto 0;
@@ -78,7 +79,6 @@ body{
 .card__face--front h2 {
   margin: 350px 10px 10px 10px;
   color: #FFF;
-  font-size: 20px;
   text-align: center;
   padding-bottom: 20px;
 }
