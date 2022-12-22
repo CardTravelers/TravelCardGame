@@ -56,6 +56,7 @@ header nav a {
 h1 {
   margin-bottom: 10px;
   color: rgb(16, 117, 31);
+  font-weight: 1000;
 }
 
 
@@ -125,8 +126,16 @@ audio{
   display:none;
 }
 
+section p {
+  padding: 40px;
+  max-width: 80%;
+  margin:auto;
+  font-size: 1.2em;
+ }
+
 /* 
 About Us CSS 
 Cleland 21 Dec
 End
  */
+
