@@ -5,6 +5,9 @@ let cardScore;
 let currentCard = 0;
 let answerArray = [];
 let time = 300;
+let timerExpired = false;
+let hint1Status = false;
+let hint2Status = false;
 
 // **********DOM WINDOWS***********
 let cardImage = document.getElementById('cardImage');// IMG element
@@ -18,6 +21,7 @@ let card = document.querySelector('.card__inner');
 let timer = document.getElementById('timer');
 let nextCard = document.getElementById('nextCard');
 let correctAnswer = document.getElementById('correctAnswer');
+let header = document.querySelector('header');
 
 // *********OBJECTS**********
 let matterhorn = new Locations(
@@ -70,6 +74,8 @@ function renderCard(cardIndex) {
   answerArray[2] = locationList[cardIndex].option3;
   answerArray[3] = locationList[cardIndex].option4;
   answerArray = shuffleArray(answerArray);
+  hint1Status = false;
+  hint2Status = false;
 
   // DOM manipulation
   cardImage.src = locationList[cardIndex].imgPath;
@@ -110,7 +116,7 @@ function handleClick(event) {
 
 function handleNextCard() {
   // Displays next card.  If no more cards, end game
-  if (currentCard < locationList.length - 1) {
+  if (currentCard < locationList.length - 1 && !timerExpired) {
     currentCard++;
     renderCard(currentCard);
     card.classList.toggle('is-flipped');
@@ -143,16 +149,29 @@ function handleSubmit(event) {
   card.classList.toggle('is-flipped');
 }
 
+function handleEnter(event){
+  // Prevents enter key from submitting the card answer
+  if (event.isComposing || event.keyCode === 13) {
+    event.preventDefault();
+  }
+}
+
 function hintOneClick() {
   // on click, show hint and decrement score
   cardHint1.textContent = locationList[currentCard].hint1;
-  cardScore = cardScore - 20;
+  if (hint1Status === false) {
+    cardScore = cardScore - 20;
+    hint1Status = true;
+  }
 }
 
 function hintTwoClick() {
   // on click, show hint and decrement score
   cardHint2.textContent = locationList[currentCard].hint2;
-  cardScore = cardScore - 20;
+  if (hint2Status === false) {
+    cardScore = cardScore - 20;
+    hint2Status = true;
+  }
 }
 
 function gameTimer() {
@@ -163,9 +182,13 @@ function gameTimer() {
     time--;
     displayTime(time);
     if (time <= 0 || time < 1) {
+      timerExpired = true;
       timer.innerHTML = 'Game over';
+      nextCard.innerHTML = 'results';
+      correctAnswer.innerHTML = ' Oh no! You couldn\'t guess all of my locations in time. I\'ll never find my way back now!';
+      card.classList.toggle('is-flipped');
       clearInterval(countdown);
-      endGame();
+      // endGame();
     }
   }, 1000);
 }
@@ -187,6 +210,7 @@ function endGame() {
 card.addEventListener('submit', handleSubmit);
 card.addEventListener('click', handleClick);
 nextCard.addEventListener('click', handleNextCard);
+card.addEventListener('keydown', handleEnter);
 
 // *********** EXECUTABLE CODE**********
 locationList = shuffleArray(locationList);
@@ -194,3 +218,4 @@ displayTime(time);
 gameTimer();
 renderCard(0);
 card.classList.toggle('is-flipped');
+header.innerHTML = `You have to...*burp* hurry up ${localStorage.getItem('userName')}. We don't have much time..`;
