@@ -1,10 +1,7 @@
 'use strict';
 // *********GLOBALS**********
-let scores = [
-  ['Player1', 430],
-  ['Player2', 530],
-  ['Player3', 630]
-];
+let scores = [];
+let colors = ['#6600CC', '#009933', '#0066FF', '#FFFF00'];
 
 // **********HELPER FUNCTION/UTILITIES**********
 function newPlayer() {
@@ -23,12 +20,17 @@ function getTable() {
   // if highScoreTable doesn't exist, create a temp one
   if (localStorage.getItem('highScoreTable') === null) {
     scores = [
-      ['Player1', 430],
-      ['Player2', 530],
-      ['Player3', 630]
+      ['Elon Musk', 430],
+      ['Peter Griffen', 530],
+      ['Oprah Winfrey', 630],
+      ['Steve Jobs', 730],
+      ['Mario and Luigi', 630],
+      ['Spiderman', 510],
+      ['JakefromStateFarm', 210],
     ];
     storeTable();
   }
+
   // Get table from localStorage, then parse into array
   let tempArray = [];
   let tempString = localStorage.getItem('highScoreTable');
@@ -39,11 +41,6 @@ function getTable() {
     tempArray[i][1] = Number(tempArray[i][1]);
   }
   return tempArray;
-  // let scoreItems = document.getElementById('highScoreTable').children;
-  // for (let i = 0; i < colors.length; i++) {
-  //   scoreItems[i].style.color = colors[i];
-  //   let colors = ['#6600CC', '#009933', '#0066FF', '#FFFF00'];
-  // };
 }
 
 function storeTable() {
@@ -97,6 +94,18 @@ function renderTable(table, data) {
       cellElem = document.createElement('td');
       cellElem.textContent = data[i][j];
       rowElem.appendChild(cellElem);
+    }
+  }
+
+  let scoreItems = document.getElementById('highScoreTable').children;
+
+  let j = 0;
+  for (let i = 0; i < numRows; i++) {
+    scoreItems[i].style.color = colors[j];
+    if (j > 2) {
+      j = 0;
+    } else {
+      j++;
     }
   }
 }
