@@ -99,6 +99,8 @@ article {
 
 article p {
   padding-top: 50px;
+  width: 80%;
+  margin: auto;
 }
 
 /* 

@@ -21,6 +21,7 @@ body {
 
 header{
   padding: 50px;
+  padding-top:250px;
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 7rem;
@@ -98,12 +99,15 @@ tr {
 td {
   border: 2px solid white;
   font-family: 'VT323', monospace;
+  font-weight: 1000;
 }
 
 th {
-  border: 2px solid white;
+  border: 5px solid white;
   width: 400px;
   font-family: 'VT323', monospace;
+  font-weight: 1000;
+  font-size: 1.5em;
 }
 
 
