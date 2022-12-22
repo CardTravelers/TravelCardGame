@@ -105,9 +105,28 @@ form input {
   font-size: 3rem;
   line-height: 20px;
   background-color: rgb(16, 117, 31);
+  cursor: pointer;
 }
 
-@keyframes animate {
+
+.scrollingLine {
+  position: absolute;
+  background-color: rgb(124, 30, 38);
+  width: 2px;
+  height: 100%;
+  animation: scrollingLine 3s infinite;
+}
+
+@keyframes scrollingLine {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 98%;
+  }
+}
+
+/* @keyframes animate {
 
   0%,
   10%,
@@ -119,7 +138,7 @@ form input {
   90% {
     width: 100%;
   }
-}
+} */
 
 
 audio{
