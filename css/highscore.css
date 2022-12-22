@@ -20,8 +20,6 @@ body {
 }
 
 header{
-  padding: 50px;
-  padding-top:250px;
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 7rem;
@@ -60,9 +58,6 @@ header::before {
 }
 
 
-.leaderboard {
-  margin-top: -300px;
-} 
 
 button {
   margin: 20px;
@@ -88,6 +83,8 @@ table {
   font-size: 4vh;
   background-image: url(../img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
   border: 3px solid white;
+  margin: auto;
+  justify-content: center;
 }
 
 tr {
