@@ -12,14 +12,12 @@ a {
   z-index: 1;
 }
 
-
 body {
   display: flex;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
 }
-
 
 header{
   padding: 50px;
@@ -86,9 +84,8 @@ button {
 }
 
 table {
-  font-family:;
   font-size: 4vh;
-  background-image: url(/img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
+  background-image: url(../img/futuristic-landscape-with-styled-laser-grid-neon-retrowave_100456-1293.jpg.webp);
   border: 3px solid white;
 }
 
@@ -100,11 +97,13 @@ tr {
 
 td {
   border: 2px solid white;
+  font-family: 'VT323', monospace;
 }
 
 th {
   border: 2px solid white;
   width: 400px;
+  font-family: 'VT323', monospace;
 }
 
 
